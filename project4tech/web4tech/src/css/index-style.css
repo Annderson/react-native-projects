@@ -1,22 +1,29 @@
 .style-lis a {
-    margin-top: 5px;
+    margin-top: 10px;
+    font-weight: 800;
+    font-size: 18px;
     color: white;
 }
 
+.style-lis a:hover {
+    color: black;
+}
+
 .logo {
-    width: 60px;
-    height: 30px;
+    width: 90px;
 }
 
 .bloco {
-    margin-bottom: 20px;
+    margin: 20px 5px;
     width: 350px;
     border: 1px solid #aaa;
     box-shadow: 1px 1px 1px #999;
 }
-.bloco h3{
+
+.bloco h3 {
     margin-top: 10px;
 }
+
 .bloco img {
     width: 350px;
 }
@@ -28,12 +35,19 @@ b {
     margin-bottom: 10px;
 }
 
+.bloco p,
+b {
+    font-size: 17px;
+}
+
 .bloco p button {
+    margin-right: 10px;
     border-radius: 5px;
 }
 
 .icons {
-    margin: 3px;
+    margin: 5px;
+    font-size: 18px;
 }
 
 .form-body {
