@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
+import { Switch, Route } from 'react-router-dom';
+
 
 import Menu from '../template/Menu/Menu'
-import ListJobs from '../components/job/ListJobs/ListJobs'
-
+import Lista from '../components/job/ListJobs/ListJobs';
+import Main from '../components/navigation/Main/Main';
+import About from '../components/about/About';
 import '../css/index-style.css'
 
 
@@ -11,9 +14,14 @@ class App extends Component {
     return (
       <div>
         <Menu />
-        <div className="container">
-            <ListJobs />            
-        </div>
+        
+        <Main>
+          <Switch>
+            <Route exact path='/' component={ Lista }></Route>
+            <Route path='/vagas' component={ Lista }></Route>
+            <Route path='/sobre' component={ About }></Route>
+          </Switch>
+        </Main>
       </div>
     )
   }

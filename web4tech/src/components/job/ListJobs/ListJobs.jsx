@@ -8,13 +8,12 @@ import FormCadastro from '../FormCadastro/FormCadastro'
 
 class ListJobs extends Component {
 
-    constructor(){
-        super()
+
         
-        this.state = {
+        state = {
             jobs: []
         }
-    }
+    
 
     componentDidMount() {
         this.refresh()
@@ -29,15 +28,26 @@ class ListJobs extends Component {
              })
     }
 
-    removeJobHandler(v2) {
-        if (window.confirm(`Deseja realmente excluir ${v2}`)){
-
+    jobRemoveHandler = (id, nome) => {
+        if (window.confirm(`Deseja realmente excluir essa vaga "${nome}"?`)) {
+          axios.delete(`/jobs/${id}`)
+               .then(res => {
+                 let vagasAtualizadas = this.state.jobs;
+                 const indiceRemovido = 
+                  vagasAtualizadas.findIndex(item => item.id == id);
+                  
+                 vagasAtualizadas.splice(indiceRemovido, 1);
+                 this.setState({ jobs: vagasAtualizadas })
+               })
+               .catch(error => {
+                 console.error(error);
+               })
         }
-    } 
+      }
 
-    editJobHendlar(v1){
-        window.confirm(`Editar: ${v1}`)
-    }
+    jobEditHandler = (id) => {
+        console.log("Editar id " + id);
+      }
 
     addItemToList(nova){
         let newJob = {...this.state.jobs}
@@ -52,11 +62,11 @@ class ListJobs extends Component {
                 return(
                     <div key={job.id} className="col-lg-4 col-md-6 col-sm-6 col-xm-12">
                         <CardJob
-                            nome={job.name}
+                            name={job.name}
                             description={job.description}
                             salary={job.salary}
-                            editHendlar={this.editJobHendlar}
-                            removeHendlar={this.removeJobHandler}
+                            editHendlar={() => this.jobEditHandler(job.id)}
+                            removeHendlar={() => this.jobRemoveHandler(job.id, job.name)}
                             />
                     </div>
                 )                

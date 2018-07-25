@@ -14,31 +14,19 @@
 }
 
 .bloco {
-    margin: 20px 5px;
-    width: 350px;
     border: 1px solid #aaa;
     box-shadow: 1px 1px 1px #999;
+    margin-bottom: 100px;
 }
 
-.bloco h3 {
+.bloco h4 {
     margin-top: 10px;
 }
 
 .bloco img {
-    width: 350px;
+    width: 100%;
 }
 
-.bloco p,
-h3,
-b {
-    margin: 0px 10px;
-    margin-bottom: 10px;
-}
-
-.bloco p,
-b {
-    font-size: 17px;
-}
 
 .bloco p button {
     margin-right: 10px;
@@ -47,7 +35,6 @@ b {
 
 .icons {
     margin: 5px;
-    font-size: 18px;
 }
 
 .form-body {
