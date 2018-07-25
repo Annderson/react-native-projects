@@ -8,12 +8,9 @@ import FormCadastro from '../FormCadastro/FormCadastro'
 
 class ListJobs extends Component {
 
-
-        
         state = {
             jobs: []
-        }
-    
+        } 
 
     componentDidMount() {
         this.refresh()
@@ -34,7 +31,7 @@ class ListJobs extends Component {
                .then(res => {
                  let vagasAtualizadas = this.state.jobs;
                  const indiceRemovido = 
-                  vagasAtualizadas.findIndex(item => item.id == id);
+                  vagasAtualizadas.findIndex(item => item.id === id);
                   
                  vagasAtualizadas.splice(indiceRemovido, 1);
                  this.setState({ jobs: vagasAtualizadas })
@@ -66,7 +63,7 @@ class ListJobs extends Component {
                             description={job.description}
                             salary={job.salary}
                             editHendlar={() => this.jobEditHandler(job.id)}
-                            removeHendlar={() => this.jobRemoveHandler(job.id, job.name)}
+                            removeHendla={() => this.jobRemoveHandler(job.id, job.name)}
                             />
                     </div>
                 )                

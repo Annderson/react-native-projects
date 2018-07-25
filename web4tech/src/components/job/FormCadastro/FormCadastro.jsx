@@ -9,22 +9,20 @@ class FormVagas extends Component {
         newJob: {}
     }
 
-    ostDataHandler = (event) => {
-        let novaVaga = {
-          ...this.state.newJob
-        };
+    postDataHandler = (event) => {
+        let novaVaga = {...this.state.newJob}
     
         axios.post('/jobs', novaVaga)
           .then((response) => {
             novaVaga.id = response.data;
-            this.props.addToList(novaVaga);
+            this.props.addToList = novaVaga;
           })
-          .catch(() => {
-    
+          .catch((error) => {
+              console.error(error);
           }) 
         
         event.preventDefault();
-      }
+    }
     
       changeValueHandler = (nomeAtributo, valor) => {
         let currentJob = this.state.newJob;
@@ -94,7 +92,7 @@ class FormVagas extends Component {
                             </div>
                             <div className="form-group text-right">
                                 <button type="submit" className="btn btn-success"
-                                        onClick={this.ostDataHandler}>Criar vaga</button>
+                                        onClick={this.postDataHandler}>Criar vaga</button>
                             </div>
                         </form>
                     </div>

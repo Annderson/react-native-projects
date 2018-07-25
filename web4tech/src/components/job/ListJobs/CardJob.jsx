@@ -12,8 +12,8 @@ const card = (props) => {
         
             <div className="card bloco">
                 <img src={design} alt="design" className="img-responsive" />
-                <div className="card-body">
-                    <h4 className="card-title">{props.name}</h4>
+                <div className="body-card ">
+                    <h4 className="card-title ">{props.name}</h4>
                     <b>Descriçao:</b>
                     <p>{props.description}</p>
                     <b>Salario base:</b>

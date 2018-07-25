@@ -16,7 +16,11 @@
 .bloco {
     border: 1px solid #aaa;
     box-shadow: 1px 1px 1px #999;
-    margin-bottom: 100px;
+    margin: 20px 5px;
+}
+
+.body-card {
+    margin: 10px;
 }
 
 .bloco h4 {
@@ -26,7 +30,6 @@
 .bloco img {
     width: 100%;
 }
-
 
 .bloco p button {
     margin-right: 10px;

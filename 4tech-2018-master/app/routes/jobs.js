@@ -53,12 +53,13 @@ module.exports = app => {
         }
     })
 
-    app.delete('/jobs/:id', (req, res) => {
+    app.delete('/jobs/:id', async(req, res) => {
         try {
-            let length = jobs.length;
-            jobs.splice(jobs.findIndex(el => el.id === req.params.id), 1);
-            if (jobs.length < length) return res.send(`A vaga com o id ${req.params.id} com successo`);
-            else return res.status(500).send(`Não foi possível deletar a vaga ${req.params.id}`);
+            const result = await jobsCollection.doc(req.params.id).delete()
+            if (result) {
+                return res.status(200).send('OK')
+            }
+            throw err;
         } catch (error) {
             return res.status(500).send(error);
         }
