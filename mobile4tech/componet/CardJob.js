@@ -2,7 +2,7 @@ import React from 'react'
 import {Text, Image, StyleSheet, View} from 'react-native'
 
 export default props =>(
-    <View>
+    <View style={{ width: '100%', height: 300 }}>
         <Image style={{ 
             marginBottom: 10,
             width: '100%',
@@ -16,6 +16,7 @@ export default props =>(
             marginBottom: 10}}>
             {props.nome}
         </Text>
+
         <Text style={{
             textAlign: 'center',
             fontWeight: 'bold',
