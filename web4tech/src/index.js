@@ -14,5 +14,6 @@ axios.defaults.baseURL = 'http://localhost:3005';
 ReactDOM.render(
   <BrowserRouter>
     <App />
-  </BrowserRouter>, document.getElementById('root'));
+  </BrowserRouter>,
+   document.getElementById('root'));
 registerServiceWorker();

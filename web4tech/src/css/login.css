@@ -1,0 +1,41 @@
+    .body-login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .row-login {
+        margin-top: 100px;
+        border-radius: 10px;
+    }
+    
+    .form-login {
+        margin-left: 90px;
+        width: 350px;
+        height: 450px;
+        background-color: rgb(243, 243, 243);
+        box-shadow: 0px 0px 10px black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .inputs {
+        width: 290px;
+        height: 32px;
+        padding: 5px;
+        font-size: 13px;
+        font-style: italic;
+    }
+    
+    .btn-lg {
+        width: 290px;
+        height: 46px;
+    }
+    
+    .style-font {
+        margin: 50px 0px;
+        font-family: 'Courier New';
+    }

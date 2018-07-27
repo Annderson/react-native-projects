@@ -1,6 +1,8 @@
 'use strict';
 
 const Job = require('../../model/job.js');
+const auth = require('../../config/tokenValidator')
+
 
 module.exports = app => {
 
@@ -24,9 +26,9 @@ module.exports = app => {
         return res.send(jobs.find(el => el.id === req.params.id));
     })
 
-    app.post('/jobs', async(req, res) => {
-
-        jobsCollection.add(req.body)
+    app.post('/jobs', auth, async( req, res, next) => {
+        console.log('testando')
+         jobsCollection.add(req.body)
             .then(ref => {
                 return res.send(ref.id)
             }).catch(error => {
