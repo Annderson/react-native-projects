@@ -14,7 +14,7 @@ import axios from 'axios'
 class App extends Component {
 
   state = {
-    loggedUser: JSON.parse(window.localStorage.getItem('use')) || null
+    loggedUser: JSON.parse(window.localStorage.getItem('user')) || null
   }
 
   loginHandler = (emailVal, passVal) => {
@@ -40,7 +40,8 @@ class App extends Component {
     if(this.getLoggedUser()){
       return (
         <div>
-            <Menu logout={this.loggoutHandle}/>  
+            <Menu logout={this.loggoutHandle}
+                  name={this.state.loggedUser.name}/>  
             <Main>
               <Switch>
                 <Route exact path='/' component={ Lista }></Route>

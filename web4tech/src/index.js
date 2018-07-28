@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import registerServiceWorker from './registerServiceWorker';
 
-axios.defaults.baseURL = 'http://localhost:3005';
+axios.defaults.baseURL = 'https://tech18.herokuapp.com';
 
 
 ReactDOM.render(

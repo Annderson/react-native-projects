@@ -8,6 +8,22 @@
 .style-lis a:hover {
     color: black;
 }
+.logout{
+    list-style: none;
+    margin-top: 25%;
+    color: white;
+    font-size: 17px;
+}
+.logout a{
+    color: white;
+    padding: 10px 20px;
+}
+.logout a:hover{
+    background-color: white;
+    color: black;
+    padding: 12px 22px;
+    border-radius: 5px;
+}
 
 .logo {
     width: 90px;

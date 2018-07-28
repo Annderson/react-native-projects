@@ -11,8 +11,14 @@ class FormVagas extends Component {
 
     postDataHandler = (event) => {
         let novaVaga = {...this.state.newJob}
+
+        const axiosConfig = {
+            headers: {
+                'Authorization': 'Bearer ' + window.localStorage.getItem('token')
+            }
+         }
     
-        axios.post('/jobs', novaVaga)
+        axios.post('/jobs', novaVaga, axiosConfig)
           .then((response) => {
             novaVaga.id = response.data;
             this.props.addToList = novaVaga;
